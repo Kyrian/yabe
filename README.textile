@@ -1,0 +1,4 @@
+h1. YABE - Yet another blog engine
+
+This is the Java version of the Play tutorial at [[http://www.playframework.org/documentation/1.1/guide1]]
+
