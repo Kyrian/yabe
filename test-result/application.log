@@ -1,5 +1,0 @@
-21 Nov 2010 19:59:14,034 INFO  ~ Starting /Users/ttreitlinger/src/workspace-java/yabe
-21 Nov 2010 19:59:15,071 WARN  ~ You're running Play! in DEV mode
-21 Nov 2010 19:59:15,216 INFO  ~ Listening for HTTP on port 9000 (Waiting a first request to start) ...
-21 Nov 2010 19:59:19,264 INFO  ~ Connected to jdbc:hsqldb:mem:playembed
-21 Nov 2010 19:59:20,158 INFO  ~ Application 'Yet Another Blog Engine' is now started !
