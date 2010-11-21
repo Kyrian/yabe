@@ -7,17 +7,24 @@ import javax.persistence.Lob;
 import javax.persistence.ManyToOne;
 
 import play.db.jpa.Model;
+import play.data.validation.*;
 
 @Entity
 public class Comment extends Model {
 
+  @Required
 	public String author;
+
+  @Required
 	public Date postedAt;
 	
-	@Lob
-	public String content;
+  @Lob
+  @Required
+  @MaxSize(10000)	public 
+  String content;
 	
 	@ManyToOne
+  @Required
 	public Post post;
 	
 	public Comment(Post post, String author, String content) {
@@ -25,5 +32,15 @@ public class Comment extends Model {
 		this.author = author;
 		this.content = content;
 		this.postedAt = new Date();
+	}
+	
+	public String toString() {
+	  if (content.length() >= 20){
+  	  StringBuilder sb = new StringBuilder(content.substring(0,20));
+  	  sb.append("...");
+  	  return sb.toString();
+	  } else {
+	    return content;
+	  }
 	}
 }
