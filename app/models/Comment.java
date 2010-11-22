@@ -35,12 +35,6 @@ public class Comment extends Model {
 	}
 	
 	public String toString() {
-	  if (content.length() >= 20){
-  	  StringBuilder sb = new StringBuilder(content.substring(0,20));
-  	  sb.append("...");
-  	  return sb.toString();
-	  } else {
-	    return content;
-	  }
+	  return content;
 	}
 }
