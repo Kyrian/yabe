@@ -9,12 +9,12 @@ GET     /posts/{tag}                    				Application.listTagged
 POST    /posts/{postId}/comments                Application.postComment
 GET     /captcha                                Application.captcha
 
-
-# Import CRUD routes
-*      	/admin              										module:crud
-
 # Import Secure routes
 *       /                                       module:secure
+
+# Administration
+GET     /admin/?                                Admin.index
+*       /admin                                  module:crud
 
 # Map static resources from the /app/public folder to the /public path
 GET     /public/                                staticDir:public

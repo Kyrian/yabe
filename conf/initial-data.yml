@@ -27,6 +27,11 @@ User(jeff):
     email:          jeff@gmail.com
     password:       secret
     fullname:       Jeff    
+
+User(jeff):
+    email:          tom@me.com
+    password:       secret
+    fullname:       Tom    
     
 Post(firstBobPost):
     title:          About the model layer
