@@ -15,6 +15,8 @@ GET     /captcha                                Application.captcha
 # Administration
 GET     /admin/?                                Admin.index
 *       /admin                                  module:crud
+GET     /admin/new                          Admin.form
+POST    /admin/new                          Admin.save
 
 # Map static resources from the /app/public folder to the /public path
 GET     /public/                                staticDir:public

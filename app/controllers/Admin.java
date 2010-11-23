@@ -1,5 +1,7 @@
 package controllers;
 
+import java.util.*;
+
 import play.mvc.*;
 import play.*;
 
@@ -17,6 +19,31 @@ public class Admin extends Controller {
 	}
 
 	public static void index() {
-		render();
+	    List<Post> posts = Post.find("author.email", Security.connected()).fetch();
+	    render(posts);
 	}
+	
+	public static void form() {
+      render();
+  }
+
+  public static void save(String title, String content, String tags) {
+      // Create post
+      User author = User.find("byEmail", Security.connected()).first();
+      Post post = new Post(author, title, content);
+      // Set tags list
+      for(String tag : tags.split("\\s+")) {
+          if(tag.trim().length() > 0) {
+              post.tags.add(Tag.findOrCreateByName(tag));
+          }
+      }
+      // Validate
+      validation.valid(post);
+      if(validation.hasErrors()) {
+          render("@form", post);
+      }
+      // Save
+      post.save();
+      index();
+  }
 }
