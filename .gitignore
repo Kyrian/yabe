@@ -1,3 +1,5 @@
 tmp
 logs
 eclipse/classes
+test-result
+cobertura.ser
